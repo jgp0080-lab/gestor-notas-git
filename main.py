@@ -1,15 +1,22 @@
-from notas import agregar_nota, mostrar_notas, eliminar_nota
+from notas import agregar_nota, mostrar_notas, eliminar_nota, contar_notas
+from utilidades import mostrar_titulo # Importación del Commit 1
 
 notas = []
 
+# Llamada a la función del archivo utilidades (Commit 1)
+mostrar_titulo()
+
 while True:
-    print("\n--- GESTOR DE NOTAS ---")
+    print("\n========================")
+    print("--- GESTOR DE NOTAS ---")
+    print("========================")
     print("1. Añadir nota")
     print("2. Mostrar notas")
     print("3. Eliminar nota")
-    print("4. Salir")
+    print("4. Ver total de notas") # Opción para el Commit 5
+    print("5. Salir")
 
-    opcion = input("Selecciona una opción: ")
+    opcion = input("\nSelecciona una opción: ") # Diseño mejorado (Commit 3)
 
     if opcion == "1":
         texto = input("Introduce la nota: ")
@@ -22,8 +29,11 @@ while True:
         eliminar_nota(notas)
 
     elif opcion == "4":
-        print("Programa finalizado")
+        contar_notas(notas) # Uso de la nueva función (Commit 5)
+
+    elif opcion == "5":
+        print(">>> Programa finalizado. ¡Hasta pronto! <<<")
         break
 
     else:
-        print("Opción incorrecta")
+        print("!!! Opción incorrecta, intenta de nuevo !!!") # Diseño (Commit 3)
