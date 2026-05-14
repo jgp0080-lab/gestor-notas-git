@@ -37,3 +37,9 @@ while True:
 
     else:
         print("!!! Opción incorrecta, intenta de nuevo !!!") # Diseño (Commit 3)
+
+
+def buscar_nota(lista):
+    termino = input("Introduce el texto a buscar: ").lower()
+    encontradas = [n for n in lista if termino in n.lower()]
+    print(f"Resultados: {encontradas}")
