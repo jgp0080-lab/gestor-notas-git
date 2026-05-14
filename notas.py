@@ -32,3 +32,9 @@ def eliminar_nota(lista):
 def contar_notas(lista):
     total = len(lista)
     print(f"Tienes un total de {total} notas.")
+
+def guardar_notas(lista):
+    with open("notas.txt", "w") as f:
+        for nota in lista:
+            f.write(nota + "\n")
+    print("Notas guardadas en notas.txt")
